@@ -38,7 +38,7 @@ mappings:
       - [dcterms:identifier, $(zona_id)]
       - [rdfs:label, $(nombre_zona)]
       - [rdfs:comment, $(descripcion_zona)]
-      - [gsp:hasGeometry, "http://vocab.linkeddata.es/datosabiertos/recurso/zona/geometry/$(zona_id)~iri"]
+      - [geosparql:hasGeometry, "http://vocab.linkeddata.es/datosabiertos/recurso/zona/geometry/$(zona_id)~iri"]
 
   campania_comercial:
     sources:
