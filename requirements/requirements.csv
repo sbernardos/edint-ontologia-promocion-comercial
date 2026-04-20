@@ -1,0 +1,12 @@
+Identifier,Responsible partner,"Version (optional)
+","Competency Question /
+ Natural language sentence (fact)",Answer (For Competency Questions),"Status (Proposed, Accepted, Rejected, Deprecated)","Use case
+(UC03-001, UC03-002, UC03-006, UC03-007)",Comments (optional),Extracted from (provenance),"Priority 
+(High, Medium, Low) (optional)",Relation with other requirements (optional),Associated ontology elements,Relation to ontology elements in other domains
+PRO01,UPM,v0.1.0,¿Qué campañas comerciales se han realizado en un municipio?,,Proposed,,,,,,,
+PRO02,UPM,v0.1.0,"¿Qué tipo de campañas (bonos, descuentos, dinamización) son más frecuentes?",,Proposed,,ordenar por frecuencia,,,,,
+PRO03,UPM,v0.1.0,¿Cuántos comercios se han adherido a cada campaña?,,Proposed,,,,,,,
+PRO04,UPM,v0.1.0,¿Qué eventos comerciales se han celebrado y en qué ubicaciones de un municipio?,,Proposed,,,,,,,
+PRO05,UPM,v0.1.0,¿Qué periodos del año concentran mayor número de eventos comerciales?,,Proposed,,,,,,,
+PRO06,UPM,v0.1.0,¿Qué zonas concentran mayor número de eventos o campañas?,,Proposed,,,,,,,
+PRO07,UPM,v0.1.0,¿Aumenta el gasto comercial de una zona cuando hay una campaña o evento?,,Proposed,,,,,,,
