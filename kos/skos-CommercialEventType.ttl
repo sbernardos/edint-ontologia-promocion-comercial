@@ -1,0 +1,51 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+@prefix edintevtype: <http://vocab.linkeddata.es/datosabiertos/kos/edint/CommercialEventType> .
+
+#################################################################
+#
+#    Concept Scheme
+#
+#################################################################
+
+edintkos:CommercialEventType a skos:ConceptScheme ; 
+    dct:issued "2026-04-20"^^xsd:date ;
+    dct:modified "2026-04-20"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
+    rdfs:label "Types of commercial events"@en ;
+    rdfs:label "Tipos de evento comercial"@es ;
+    dct:title "Concept scheme grouping types of commercial events"@en ;
+    dct:title "Esquema de conceptos que agrupa tipos de eventos comerciales"@es ;
+    skos:hasTopConcept edintkoacctype:Fair ;
+    skos:hasTopConcept edintkoacctype:ThematicMarket ;
+    skos:hasTopConcept edintkoacctype:LocalEvent .
+
+
+#################################################################
+#
+#    Concepts
+#
+#################################################################
+
+edintkoacctype:Fair a skos:Concept ;
+	skos:inScheme edintkos:CommercialEventType ;
+  	skos:prefLabel "Feria"@es ;
+	skos:prefLabel "Fair"@en .
+
+edintkoacctype:ThematicMarket a skos:Concept ;
+	skos:inScheme edintkos:CommercialEventType ;
+  	skos:prefLabel "Mercado temático"@es ;
+	skos:prefLabel "Thematic market"@en .
+
+  edintkoacctype:LocalEvent a skos:Concept ;
+  skos:inScheme edintkos:CommercialEventType ;
+  skos:prefLabel "Evento local"@es ;
+  skos:prefLabel "Local Event"@en  .

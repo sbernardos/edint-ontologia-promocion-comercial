@@ -1,0 +1,51 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+
+@prefix edintkos: <http://vocab.linkeddata.es/datosabiertos/kos/edint/> .
+@prefix edintevtype: <http://vocab.linkeddata.es/datosabiertos/kos/edint/CommercialCampaignType> .
+
+#################################################################
+#
+#    Concept Scheme
+#
+#################################################################
+
+edintkos:CommercialCampaignType a skos:ConceptScheme ; 
+    dct:issued "2026-04-20"^^xsd:date ;
+    dct:modified "2026-04-20"^^xsd:date ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    rdfs:comment "This concept scheme belongs to the set of controlled SKOS-based thesauri used by the ontologies from the EDINT data space."@en ;
+    rdfs:comment "Este esquema de conceptos pertenece al conjunto de tesauros SKOS usados por las ontologías del espacio de datos EDINT."@es ;
+    rdfs:label "Types of commercial events"@en ;
+    rdfs:label "Tipos de evento comercial"@es ;
+    dct:title "Concept scheme grouping types of commercial events"@en ;
+    dct:title "Esquema de conceptos que agrupa tipos de eventos comerciales"@es ;
+    skos:hasTopConcept edintkoacctype:Voucher ;
+    skos:hasTopConcept edintkoacctype:Discount ;
+    skos:hasTopConcept edintkoacctype:Revitalization .
+
+
+#################################################################
+#
+#    Concepts
+#
+#################################################################
+
+edintkoacctype:Voucher a skos:Concept ;
+	skos:inScheme edintkos:CommercialCampaignType ;
+  	skos:prefLabel "Bono"@es ;
+	skos:prefLabel "Voucher"@en .
+
+edintkoacctype:Discount a skos:Concept ;
+	skos:inScheme edintkos:CommercialCampaignType ;
+  	skos:prefLabel "Descuento"@es ;
+	skos:prefLabel "Discount"@en .
+
+  edintkoacctype:Revitalization a skos:Concept ;
+  skos:inScheme edintkos:CommercialCampaignType ;
+  skos:prefLabel "Dinamización"@es ;
+  skos:prefLabel "Revitalization"@en  .
