@@ -1,0 +1,53 @@
+@prefix comp: <http://semweb.mmlab.be/ns/rml-compression#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix edintcom: <http://vocab.linkeddata.es/datosabiertos/def/comercio/censo-locales#> .
+@prefix edintkoaccCamtype: <http://vocab.linkeddata.es/datosabiertos/kos/edint/CommercialCampaignType/> .
+@prefix edintkoacctype: <http://vocab.linkeddata.es/datosabiertos/kos/edint/CommercialEventType/> .
+@prefix edintpro: <http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#> .
+@prefix edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#> .
+@prefix ex: <https://example.org/id/> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix formats: <http://www.w3.org/ns/formats/> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix schema: <http://schema.org/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/campania-comercial/CAMP-2025-001>
+  a edintcom:CommercialCampaign;
+  dcterms:identifier "CAMP-2025-001";
+  schema:description "Campaña de dinamización del comercio del centro histórico con bonos descuento y actividades culturales en calle.";
+  schema:endDate "2025-04-20T22:00:00"^^xsd:dateTime;
+  schema:startDate "2025-04-15T10:00:00"^^xsd:dateTime;
+  edintcom:includes <http://vocab.linkeddata.es/datosabiertos/recurso/espacioComercial/COM-0001>;
+  edintcom:locateInZone <http://vocab.linkeddata.es/datosabiertos/recurso/zona/ZONA-001>;
+  edintpro:hasCommercialCampaignType edintkoaccCamtype:Voucher;
+  rdfs:label "Primavera Comercial Centro 2025" .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/espacioComercial/COM-0001> a edintcom:CommercialSpace;
+  edintcom:locateInZone <http://vocab.linkeddata.es/datosabiertos/recurso/zona/ZONA-001> .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/evento-comercial/EV-2025-001> a
+    edintcom:CommercialEvent;
+  dcterms:identifier "EV-2025-001";
+  schema:endDate "2025-04-20T22:00:00"^^xsd:dateTime;
+  schema:startDate "2025-04-15T10:00:00"^^xsd:dateTime;
+  edintcom:hasCommercialCampaignType edintkoaccCamtype:Voucher;
+  edintcom:hasCommercialEventType edintkoacctype:Fair;
+  edintcom:locateInZone <http://vocab.linkeddata.es/datosabiertos/recurso/zona/ZONA-001>;
+  rdfs:comment "Campaña de dinamización del comercio del centro histórico con bonos descuento y actividades culturales en calle.";
+  rdfs:label "Primavera Comercial Centro 2025" .
+
+<http://vocab.linkeddata.es/datosabiertos/recurso/zona/ZONA-001> a edintzone:EconomicInterestZone;
+  dcterms:identifier "ZONA-001";
+  geosparql:hasGeometry <http://vocab.linkeddata.es/datosabiertos/recurso/zona/geometry/ZONA-001>;
+  rdfs:comment "Zona de alta concentración de comercio minorista, hostelería y servicios turísticos en el distrito Centro de Madrid.";
+  rdfs:label "Centro Histórico" .
