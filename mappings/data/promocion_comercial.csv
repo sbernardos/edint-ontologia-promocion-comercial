@@ -1,0 +1,2 @@
+evento_id,campania_id,nombre,descripcion,tipo_event,tipo_camp,tipo_campania,zona_id,nombre_zona,descripcion_zona,espacioComercial_id,fecha_inicio,fecha_fin
+EV-2025-001,CAMP-2025-001,"Primavera Comercial Centro 2025","Campaña de dinamización del comercio del centro histórico con bonos descuento y actividades culturales en calle.","Fair","Voucher","Voucher","ZONA-001","Centro Histórico","Zona de alta concentración de comercio minorista, hostelería y servicios turísticos en el distrito Centro de Madrid.","COM-0001","2025-04-15T10:00:00","2025-04-20T22:00:00"
