@@ -1,24 +1,16 @@
-# Ontología EDINT XXX (EDINT XXX Ontology)
+# Ontología EDINT de Promoción Comercial (EDINT Commercial Promotion Ontology)
 
-La ontología XXX representa el dominio ABC.
+La ontología de Promoción Comercial representa el dominio de las promociones comerciales, incluyendo eventos y campañas.
 
 # Propósito y alcance de la ontología (Purpose and scope of the ontology)
 
-El propósito de la ontología XXX es YYYY. 
-El alcance de la ontología XXX está limitado a ZZZZ.
+El propósito de esta ontología es proporcionar un vocabulario común para la representación de las entidades y los datos principales relacionados con la promoción comercial, como campañas y eventos.
 
 # Prefijo y espacio de nombres (Prefix and namespace)
 
-El prefijo de la ontología es: `XXX` y se encuentra publicada en el espacio de nombres: [http://vocab.linkeddata.es/datosabiertos/def/xxx/](http://vocab.linkeddata.es/datosabiertos/def/xxx/)
+El prefijo de la ontología es: edintcom y se encuentra publicada en el espacio de nombres: [http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#](http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#)
 
 # Modelo conceptual (Ontology conceptualization)
-
-Cada repositorio de desarrollo de ontologías debe incluir, en este README principal, una representación visual de la conceptualización de la ontología.
-Esta imagen ayuda a los usuarios y colaboradores a comprender rápidamente la estructura de la ontología, sus conceptos clave y las relaciones entre ellos.
-
-- La imagen debe estar ubicada en la carpeta de conceptualización.
-- Formatos aceptados: .svg, .png o .drawio.
-- Debe referenciarse en este README usando la sintaxis de Markdown, por ejemplo:
 
 ![Diagrama del modelo conceptual](diagrams/diagrama.png)
 
