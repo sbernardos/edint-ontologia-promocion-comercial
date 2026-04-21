@@ -89,7 +89,7 @@
 	rr:predicateObjectMap [
 		rr:predicateMap [
 			a rr:PredicateMap;
-			rr:constant edintcom:locateInZone;
+			rr:constant edintcom:locatedInZone;
 		];
 		rr:objectMap [
 			a rr:ObjectMap;
@@ -231,7 +231,7 @@
 	rr:predicateObjectMap [
 		rr:predicateMap [
 			a rr:PredicateMap;
-			rr:constant schema:description;
+			rr:constant rdfs:comment;
 		];
 		rr:objectMap [
 			a rr:ObjectMap;
@@ -241,7 +241,7 @@
 	rr:predicateObjectMap [
 		rr:predicateMap [
 			a rr:PredicateMap;
-			rr:constant edintcom:locateInZone;
+			rr:constant edintcom:locatedInZone;
 		];
 		rr:objectMap [
 			a rr:ObjectMap;
@@ -320,7 +320,7 @@
 	rr:predicateObjectMap [
 		rr:predicateMap [
 			a rr:PredicateMap;
-			rr:constant edintcom:locateInZone;
+			rr:constant edintcom:locatedInZone;
 		];
 		rr:objectMap [
 			a rr:ObjectMap;

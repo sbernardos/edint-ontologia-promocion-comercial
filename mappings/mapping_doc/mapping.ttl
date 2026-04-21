@@ -35,6 +35,7 @@ map:rules_000 schema:contributor map:person_000 ;
     schema:description "Este conjunto de mappings RML transforma los datos de promoción comercial municipal a RDF, utilizando la ontología EDINT de Promoción Comercial. El objetivo es generar un grafo RDF interoperable para representar las entidades principales de la promoción comercial, como campañas y eventos comerciales, y su información asociada, orientada a usos habituales de las entidades locales".
 
 
+
 <eventoComercial_0> a rr:TriplesMap;
 
 	rml:logicalSource [
@@ -101,7 +102,7 @@ map:rules_000 schema:contributor map:person_000 ;
 	rr:predicateObjectMap [
 		rr:predicateMap [
 			a rr:PredicateMap;
-			rr:constant edintcom:locateInZone;
+			rr:constant edintcom:locatedInZone;
 		];
 		rr:objectMap [
 			a rr:ObjectMap;
@@ -243,7 +244,7 @@ map:rules_000 schema:contributor map:person_000 ;
 	rr:predicateObjectMap [
 		rr:predicateMap [
 			a rr:PredicateMap;
-			rr:constant schema:description;
+			rr:constant rdfs:comment;
 		];
 		rr:objectMap [
 			a rr:ObjectMap;
@@ -253,7 +254,7 @@ map:rules_000 schema:contributor map:person_000 ;
 	rr:predicateObjectMap [
 		rr:predicateMap [
 			a rr:PredicateMap;
-			rr:constant edintcom:locateInZone;
+			rr:constant edintcom:locatedInZone;
 		];
 		rr:objectMap [
 			a rr:ObjectMap;
@@ -332,7 +333,7 @@ map:rules_000 schema:contributor map:person_000 ;
 	rr:predicateObjectMap [
 		rr:predicateMap [
 			a rr:PredicateMap;
-			rr:constant edintcom:locateInZone;
+			rr:constant edintcom:locatedInZone;
 		];
 		rr:objectMap [
 			a rr:ObjectMap;

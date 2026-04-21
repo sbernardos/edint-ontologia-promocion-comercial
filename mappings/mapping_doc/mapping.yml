@@ -25,7 +25,7 @@ mappings:
       - [rdfs:label, $(nombre) ]
       - [rdfs:comment, $(descripcion) ]
       - [edintcom:hasCommercialEventType, "http://vocab.linkeddata.es/datosabiertos/kos/edint/CommercialEventType/$(tipo_event)~iri" ]
-      - [edintcom:locateInZone, "http://vocab.linkeddata.es/datosabiertos/recurso/zona/$(zona_id)~iri"]
+      - [edintcom:locatedInZone, "http://vocab.linkeddata.es/datosabiertos/recurso/zona/$(zona_id)~iri"]
       - [schema:startDate, $(fecha_inicio), xsd:dateTime ]
       - [schema:endDate, $(fecha_fin), xsd:dateTime ]
   zona:
@@ -47,8 +47,8 @@ mappings:
       - [a, edintcom:CommercialCampaign]
       - [dcterms:identifier, $(campania_id)]
       - [rdfs:label, $(nombre)]
-      - [schema:description, $(descripcion)]
-      - [edintcom:locateInZone, "http://vocab.linkeddata.es/datosabiertos/recurso/zona/$(zona_id)~iri"]
+      - [rdfs:comment, $(descripcion)]
+      - [edintcom:locatedInZone, "http://vocab.linkeddata.es/datosabiertos/recurso/zona/$(zona_id)~iri"]
       - [edintcom:includes, "http://vocab.linkeddata.es/datosabiertos/recurso/espacioComercial/$(espacioComercial_id)~iri"]
       - [schema:startDate, $(fecha_inicio), xsd:dateTime]
       - [schema:endDate, $(fecha_fin), xsd:dateTime]
@@ -60,4 +60,4 @@ mappings:
     s: http://vocab.linkeddata.es/datosabiertos/recurso/espacioComercial/$(espacioComercial_id)
     po:
       - [a, edintcom:CommercialSpace]
-      - [edintcom:locateInZone, "http://vocab.linkeddata.es/datosabiertos/recurso/zona/$(zona_id)~iri"]
+      - [edintcom:locatedInZone, "http://vocab.linkeddata.es/datosabiertos/recurso/zona/$(zona_id)~iri"]
