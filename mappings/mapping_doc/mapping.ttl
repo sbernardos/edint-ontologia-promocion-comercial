@@ -1,0 +1,344 @@
+@prefix ex: <https://example.org/id/>.
+@prefix edintpro: <http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#>.
+@prefix edintcom: <http://vocab.linkeddata.es/datosabiertos/def/comercio/censo-locales#>.
+@prefix edintzone: <http://vocab.linkeddata.es/datosabiertos/def/common/zone#>.
+@prefix schema: <http://schema.org/>.
+@prefix dcterms: <http://purl.org/dc/terms/>.
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix edintkoacctype: <http://vocab.linkeddata.es/datosabiertos/kos/edint/CommercialEventType/>.
+@prefix edintkoaccCamtype: <http://vocab.linkeddata.es/datosabiertos/kos/edint/CommercialCampaignType/>.
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#>.
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix formats: <http://www.w3.org/ns/formats/>.
+@prefix comp: <http://semweb.mmlab.be/ns/rml-compression#>.
+@prefix void: <http://rdfs.org/ns/void#>.
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#>.
+@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#>.
+@base <http://example.com/ns#>.
+@prefix dct: <http://purl.org/dc/terms/>.
+@prefix map: <http://mapping.example.com/> .
+
+map:person_000 dct:contributor foaf:Person ;
+	rdfs:label "Jhon Toledo" ;
+	foaf:mbox <mailto:ja.toledo@upm.es> .
+map:rules_000 schema:contributor map:person_000 ;
+	rdf:type schema:Dataset;
+    schema:version "0.1.0";
+    schema:title "Mappings RML para transformar datos de Promoción Comercial a RDF (EDINT Promoción Comercial)";
+    schema:dateCreated "21-04-2026";
+    schema:description "Este conjunto de mappings RML transforma los datos de promoción comercial municipal a RDF, utilizando la ontología EDINT de Promoción Comercial. El objetivo es generar un grafo RDF interoperable para representar las entidades principales de la promoción comercial, como campañas y eventos comerciales, y su información asociada, orientada a usos habituales de las entidades locales".
+
+
+<eventoComercial_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "promocion_comercial.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/evento-comercial/{evento_id}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintcom:CommercialEvent;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant dcterms:identifier;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "evento_id";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdfs:label;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "nombre";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdfs:comment;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "descripcion";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant edintcom:hasCommercialEventType;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/kos/edint/CommercialEventType/{tipo_event}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant edintcom:locateInZone;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/zona/{zona_id}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant schema:startDate;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "fecha_inicio";
+			rr:datatype xsd:dateTime
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant schema:endDate;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "fecha_fin";
+			rr:datatype xsd:dateTime
+		];
+	].
+
+
+<zona_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "promocion_comercial.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/zona/{zona_id}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintzone:EconomicInterestZone;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant dcterms:identifier;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "zona_id";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdfs:label;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "nombre_zona";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdfs:comment;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "descripcion_zona";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant geosparql:hasGeometry;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/zona/geometry/{zona_id}";
+			rr:termType rr:IRI
+		];
+	].
+
+
+<campania_comercial_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "promocion_comercial.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/campania-comercial/{campania_id}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintcom:CommercialCampaign;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant dcterms:identifier;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "campania_id";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdfs:label;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "nombre";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant schema:description;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "descripcion";
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant edintcom:locateInZone;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/zona/{zona_id}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant edintcom:includes;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/espacioComercial/{espacioComercial_id}";
+			rr:termType rr:IRI
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant schema:startDate;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "fecha_inicio";
+			rr:datatype xsd:dateTime
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant schema:endDate;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rml:reference "fecha_fin";
+			rr:datatype xsd:dateTime
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant edintpro:hasCommercialCampaignType;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/kos/edint/CommercialCampaignType/{tipo_campania}";
+			rr:termType rr:IRI
+		];
+	].
+
+
+<espacioComercial_0> a rr:TriplesMap;
+
+	rml:logicalSource [
+		a rml:LogicalSource;
+		rml:source "promocion_comercial.csv";
+		rml:referenceFormulation ql:CSV
+
+	];
+	rr:subjectMap [
+		a rr:SubjectMap;
+		rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/espacioComercial/{espacioComercial_id}";
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant rdf:type;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:constant edintcom:CommercialSpace;
+		];
+	];
+	rr:predicateObjectMap [
+		rr:predicateMap [
+			a rr:PredicateMap;
+			rr:constant edintcom:locateInZone;
+		];
+		rr:objectMap [
+			a rr:ObjectMap;
+			rr:template "http://vocab.linkeddata.es/datosabiertos/recurso/zona/{zona_id}";
+			rr:termType rr:IRI
+		];
+	].
+
+
