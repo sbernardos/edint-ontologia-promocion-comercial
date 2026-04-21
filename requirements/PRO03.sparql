@@ -1,0 +1,30 @@
+
+# PRO03: ¿Cuántos comercios se han adherido a cada campaña?
+
+PREFIX edintpro: <http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#>
+PREFIX dcterms:  <http://purl.org/dc/terms/>
+
+SELECT ?campaign ?campaignId ?numCommercialSpaces
+WHERE {
+  ?campaign a edintpro:CommercialCampaign ;
+            dcterms:identifier ?campaignId ;
+            edintpro:numberOfCommercialSpaces ?numCommercialSpaces .
+}
+ORDER BY DESC(?numCommercialSpaces)
+
+
+# Alternativa contnado los comercios que incluye cada campaña
+
+
+SELECT ?campaign ?campaignId (
+      COALESCE(COUNT(DISTINCT ?commercialSpace), 0) AS ?numCommercialSpaces)  # Para considerar campañas sin comercios adheridos
+WHERE {
+  ?campaign a edintpro:CommercialCampaign ;
+            dcterms:identifier ?campaignId .
+
+  OPTIONAL {
+    ?campaign edintpro:includes ?commercialSpace .
+  }
+}
+GROUP BY ?campaign ?campaignId
+ORDER BY DESC(?numCommercialSpaces)

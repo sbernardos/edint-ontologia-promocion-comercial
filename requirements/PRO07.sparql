@@ -1,0 +1,55 @@
+
+# PRO06: ¿Qué zonas concentran mayor número de eventos o campañas?
+
+PREFIX edintpro: <http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?zone ?zoneLabel (COUNT(?activity) AS ?numActivities)
+WHERE {
+  ?activity edintpro:locatedInZone ?zone .
+  
+  FILTER (
+    EXISTS { ?activity a edintpro:CommercialEvent } ||
+    EXISTS { ?activity a edintpro:CommercialCampaign }
+  )
+
+  OPTIONAL {
+    ?zone rdfs:label ?zoneLabel .
+    FILTER (lang(?zoneLabel) = "es")
+  }
+}
+GROUP BY ?zone ?zoneLabel
+ORDER BY DESC(?numActivities)
+
+
+
+# Para diferenciar entre eventos y campañasPREFIX edintpro: <http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#>
+
+PREFIX edintpro: <http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT
+   ?zone
+  (SUM(?numEvents) AS ?totalEvents)
+  (SUM(?numCampaigns) AS ?totalCampaigns)
+WHERE {
+  {
+    SELECT ?zone (COUNT(?event) AS ?numEvents) (0 AS ?numCampaigns)
+    WHERE {
+      ?event a edintpro:CommercialEvent ;
+             edintpro:locatedInZone ?zone .
+    }
+    GROUP BY ?zone
+  }
+  UNION
+  {
+    SELECT ?zone (0 AS ?numEvents) (COUNT(?campaign) AS ?numCampaigns)
+    WHERE {
+      ?campaign a edintpro:CommercialCampaign ;
+                edintpro:locatedInZone ?zone .
+    }
+    GROUP BY ?zone
+  }
+}
+GROUP BY ?zone
+ORDER BY DESC(?totalEvents + ?totalCampaigns)

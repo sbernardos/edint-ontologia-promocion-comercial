@@ -1,0 +1,64 @@
+
+# PRO04: ¿Qué eventos comerciales se han celebrado y en qué ubicaciones de un municipio?
+
+PREFIX edintpro: <http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#>
+PREFIX schema:   <http://schema.org/>
+PREFIX esadm:    <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#>
+PREFIX dcterms:  <http://purl.org/dc/terms/>
+
+SELECT DISTINCT ?event ?eventId ?zone ?zoneLabel
+WHERE {
+  ?event a edintpro:CommercialEvent ;
+         dcterms:identifier ?eventId ;
+         edintpro:locatedInZone ?zone .
+
+  ?zone esadm:municipio <URI_DEL_MUNICIPIO> .
+
+  OPTIONAL {
+    ?zone rdfs:label ?zoneLabel .
+    FILTER (lang(?zoneLabel) = "es")
+  }
+}
+ORDER BY ?eventId
+
+
+
+# Variante con coordenadas de zona de ubicación
+
+PREFIX edintpro: <http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#>
+PREFIX esadm:    <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#>
+PREFIX geo:      <http://www.opengis.net/ont/geosparql#>
+PREFIX sf:       <http://www.opengis.net/ont/sf#>
+PREFIX geocore:  <https://datos.ign.es/def/geo_core#>
+PREFIX dcterms:  <http://purl.org/dc/terms/>
+PREFIX rdfs:     <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT
+  ?event
+  ?eventId
+  ?zone
+  ?zoneLabel
+  ?x
+  ?y
+WHERE {
+  # Evento comercial
+  ?event a edintpro:CommercialEvent ;
+         dcterms:identifier ?eventId ;
+         edintpro:locatedInZone ?zone .
+
+  # Ubicación dentro del municipio
+  ?zone esadm:municipio <URI_DEL_MUNICIPIO> ;
+            geo:hasGeometry ?geom .
+
+  # Geometría puntual con coordenadas
+  ?geom a sf:Point ;
+        geocore:xETRS89 ?x ;
+        geocore:yETRS89 ?y .
+
+  # Etiqueta opcional de la ubicación
+  OPTIONAL {
+    ?zone rdfs:label ?zoneLabel .
+    FILTER (lang(?zoneLabel) = "es")
+  }
+}
+ORDER BY ?eventId

@@ -1,0 +1,40 @@
+
+# PRO05: ¿Qué periodos del año concentran mayor número de eventos comerciales?
+
+PREFIX edintpro: <http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#>
+PREFIX schema:   <http://schema.org/>
+PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?month (COUNT(?event) AS ?numEvents)
+WHERE {
+  ?event a edintpro:CommercialEvent ;
+         schema:startDate ?startDate .
+
+  BIND(month(xsd:dateTime(?startDate)) AS ?month)
+}
+GROUP BY ?month
+ORDER BY DESC(?numEvents)
+
+
+# Variante por año y mes
+
+PREFIX edintpro: <http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#>
+PREFIX schema:   <http://schema.org/>
+PREFIX xsd:      <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?yearMonth (COUNT(?event) AS ?numEvents)
+WHERE {
+  ?event a edintpro:CommercialEvent ;
+         schema:startDate ?startDate .
+
+  BIND(
+    CONCAT(
+      STR(year(xsd:dateTime(?startDate))), "-",
+      IF(month(xsd:dateTime(?startDate)) < 10,
+         CONCAT("0", STR(month(xsd:dateTime(?startDate)))),
+         STR(month(xsd:dateTime(?startDate))))
+    ) AS ?yearMonth
+  )
+}
+GROUP BY ?yearMonth
+ORDER BY DESC(?numEvents)
