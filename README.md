@@ -4,7 +4,7 @@ La ontología de Promoción Comercial representa el dominio de las promociones c
 
 # Propósito y alcance de la ontología (Purpose and scope of the ontology)
 
-El propósito de esta ontología es proporcionar un vocabulario común para la representación de las entidades y los datos principales relacionados con la promoción comercial, como campañas y eventos.
+El propósito de esta ontología es proporcionar un vocabulario común para la representación de las entidades y los datos principales relacionados con la promoción comercial, como campañas y eventos. Quedan fuera del alcance de la ontología otros aspectos relacionados con el comercio, como pueden ser los datos del censo de locales comerciales, que son objeto de una ontología específica dentro del mismo proyecto EDINT.
 
 # Prefijo y espacio de nombres (Prefix and namespace)
 
