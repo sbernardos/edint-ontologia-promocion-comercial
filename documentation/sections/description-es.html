@@ -1,9 +1,21 @@
-<h2 id="desc" class="list">promocion: Descripci&oacute;n <span class="backlink"> volver a <a href="#toc">&iacute;ndice</a></span></h2>
+<h2 id="desc" class="list">Ontología EDINT de Establecimiento Comercial: Descripci&oacute;n <span class="backlink"> volver a <a href="#toc">&iacute;ndice</a></span></h2>
 
-<span class="markdown">Descripci&oacute;n completa de la ontolog&iacute;a: en caso de ser posible, a&ntilde;adir un diagrama explicando c&oacute;omo las clases est&aacute;n relacionadas, ejemplos de uso, etc.
+<span class="markdown">
 
-</span>
-<img src="images/diagrama.png" style="width:70%; display:block; margin:0 auto;">
+<p>La Figura 1 muestra las principales entidades de la ontolog&iacute;a y las relaciones entre ellas. La ontolog&iacute;a representa, entre otras cosas, las <a href="#CommercialCampaign">campañas comerciales</a>, que representan un conjunto de operaciones y estrategias de marketing que persiguen objetivos en común como son los de dar visibilidad a determinados productos y servicios, y los <a href="#CommercialEvent">eventos comerciales</a>, que representan un acto planificado para interactuar con su público objetivo —clientes, socios o empleados— con el fin de promocionar productos o servicios. Las <a href="#CommercialCampaign">campañas comerciales</a> pueden <a href="#hasCommercialCampaignType">corresponder a un tipo de campaña</a>, <a href="#locatedInZone">abarcar una zona</a> y <a href="#edintzone:locatedIn">estar en un municipio</a>. Además, <a href="#numberOfCommercialSpaces">tienen un número de comercios adheridos</a>, aunque también se puede <a href="#includesCommercialSpace">indicar los espacios comerciales adheridos</a> concretos. Otros datos incluyen una <a href="#schema:startDate">fecha de inicio</a>, una <a href="#schema:endDate">fecha de fin</a> y un <a href="#budget">presupuesto</a>.</p>
+
+<p> Los <a href="#CommercialEvent">eventos comerciales</a> pueden corresponder a un tipo de evento y abarcar una zona y estar en un municipio. Otros datos incluyen una <a href="#schema:startDate">fecha de inicio</a> y una <a href="#schema:endDate">fecha de fin</a>, pero se pueden representar horarios más complejos utilizando <a href="#schema:Event">event</a>, de la que los <a href="#CommercialEvent">eventos comerciales</a> son sublase, y <a href="#schema:Schedule">schedule</a> de la <a href="http://schema.org/">ontología schema</a>.</p>
+<p>Para ambos, <a href="#CommercialCampaign">campañas comerciales</a> y <a href="#CommercialEvent">eventos comerciales</a>, se puede establecer  su <a href="#geosparql:asWKT">geolocalizaci&oacute;n</a> a trav&eacute;s de <a href="#gsp:hasGeometry">su geometr&iacute;a</a>.</p>
+
+<p>NOTA: Para establecer/obtener la <a href="edintzone:RegulatedZone">zona</a> en la que está un <a href="#CommercialSpace">espacio comercial</a> se puede usar la propiedad <a href="#locatedInZone">situado en zona</a>, pero también se puede recurrir a las propiedades relacionadas con localización de los <a href="http://vocab.linkeddata.es/datosabiertos/def/urbanismos-infraestructuras/infraestructura#InfrastructureElementructureElement">elementos de infraestructura de la <a href="http://vocab.linkeddata.es/datosabiertos/def/urbanismos-infraestructuras/infraestructura#">Ontología de Infraestructura</a>.
+</p>
+
+<p><center><img src="images/diagrama.png" style="width:100%;"/><figcaption>
+Figura 1. Modelo conceptual de la ontolog&iacute;a (sin incluir propiedades de datos).</figcaption></center></p> 
+
+<p>A continuaci&oacute;n se muestra un ejemplo en RDF usando la notaci&oacute;n RDF Turtle. Este ejemplo describe la <a href="#CommercialCampaign">campaña comercial</a> CAMP-2025-CH-001, de <a href="#hasCommercialCampaignType">tipo</a> Revilatization(revitalización), y el <a href="#CommercialEvent">evento comercial</a> EV-2025-CH-001, de <a href="#hasCommercialEventType">tipo</a> LocalEvent (evento local). Ambos <a href="#locatedInZone">est&aacute;n situados en la zona de interés económico</a> ZONA-CHAMBERI-001. La <a href="#CommercialCampaign">campaña comercial</a> <a href="#includesCommercialSpace">incluye el espacio comercial</a> COM-CH-0001, que obviamente también estará en esa zona, y sus fechas <a href="#schema:startDate">de inicio</a> y <a href="#schema:startDate">de fin</a>.
+</p>
+
 <pre><textarea style="resize:none" readonly id="code_cd71" name="code" rows="25" cols="100">
 @prefix comp: &lt;http://semweb.mmlab.be/ns/rml-compression#&gt; .
 @prefix d2rq: &lt;http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#&gt; .
@@ -61,8 +73,9 @@
 
 </textarea></pre>
 <script>
-    var editor_cd71 = CodeMirror.fromTextArea(document.getElementById("code_cd71"), {
+    var editor_d581 = CodeMirror.fromTextArea(document.getElementById("code_d581"), {
         mode: "text/turtle",
         matchBrackets: true
     });
 </script>
+</span>

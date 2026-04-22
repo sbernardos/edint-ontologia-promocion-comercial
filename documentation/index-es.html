@@ -61,17 +61,10 @@ function loadTOC(){
       $("#nstable").load("sections/ns-es.html"); 
       $("#overview").load("sections/overview-es.html"); 
       $("#description").load("sections/description-es.html"); 
-      $("#references").load("sections/references-es.html"); 
       $("#crossref").load("sections/crossref-es.html", null, loadHash); 
     });
     </script> 
-  
-<link rel="stylesheet" href="resources/codemirror.css">
-<script src="resources/codemirror.js"></script>
-<script src="resources/matchbrackets.js"></script>
-<script src="resources/turtle.js"></script>
-
-</head> 
+  </head> 
 
 <body>
 <div class="container">
@@ -104,7 +97,7 @@ function loadTOC(){
 <dd>Ontología de Promoción Comercial. EDINT. Revision: v0.1.0.</dd>
 </dl>
 
-<a href="provenance/provenance-es.html" target="_blank">Provenance de esta p&aacute;gina</a><hr/>
+<hr/>
 </div>
 <div class="status">
 <div>
@@ -116,7 +109,6 @@ function loadTOC(){
      <div id="overview"></div>
      <div id="description"></div>
      <div id="crossref"></div>
-     <div id="references"></div>
 <div id="acknowledgments">
 <h2 id="ack" class="list">Agradecimientos <span class="backlink"> volver a <a href="#toc">&iacute;ndice</a></span></h2>
 <p>Los autores agradecen a <a href="http://www.essepuntato.it/">Silvio Peroni</a> el desarrollo de <a href="http://www.essepuntato.it/lode">LODE</a>, un entorno de documentaci&oacute;n para OWL que es usado para generar la descripci&oacute;n de t&eacute;rminos de la ontolog&iacute;a de este documento; y a  <a href="http://purl.org/net/dgarijo">Daniel Garijo</a> por desarrollar <a href="https://github.com/dgarijo/Widoco">Widoco</a>, el programa utilizado para producir la plantilla en la que se basa este documento.</p>
@@ -124,31 +116,5 @@ function loadTOC(){
 
 
 </div>
-
-<script>
-(function() {
-  function initCodeMirrorEditors() {
-    document.querySelectorAll('textarea[id^="code"]').forEach(function(ta) {
-      if (!ta.nextSibling || !ta.nextSibling.classList ||
-          !ta.nextSibling.classList.contains('CodeMirror')) {
-        CodeMirror.fromTextArea(ta, {
-          mode: "text/turtle",
-          matchBrackets: true,
-          readOnly: ta.readOnly
-        });
-      }
-    });
-  }
-  document.addEventListener('DOMContentLoaded', function() {
-    initCodeMirrorEditors();
-    new MutationObserver(function(mutations) {
-      mutations.forEach(function(m) {
-        if (m.addedNodes.length > 0) { initCodeMirrorEditors(); }
-      });
-    }).observe(document.body, { childList: true, subtree: true });
-  });
-})();
-</script>
-
 </body>
 </html>

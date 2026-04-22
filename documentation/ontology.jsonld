@@ -158,12 +158,6 @@
     "@id" : "http://schema.org/"
   } ]
 }, {
-  "@id" : "http://schema.org/name",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
-    "@id" : "http://schema.org/"
-  } ]
-}, {
   "@id" : "http://schema.org/openingHours",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -360,6 +354,15 @@
     "@value" : "0.1.0"
   } ]
 }, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#CommercialSpace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/comercio/censo-locales#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/urbanismos-infraestructuras/infraestructura#InfrastructureElement"
+  } ]
+}, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#budget",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
@@ -415,6 +418,40 @@
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
     "@id" : "_:genid5"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#includesCommercialSpace",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "It relates an entitiy, especially a Campaign, to the commercial space that has joined it."
+  }, {
+    "@language" : "es",
+    "@value" : "Relaciona una entidad, principalmente una campaña, con el espacio comercial que se ha adherido a ella."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "includes commercial space"
+  }, {
+    "@language" : "es",
+    "@value" : "incluye espacio comercial"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#locatedInZone",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "It relates en entity, especially a commercial space, event or campaign, to the zone where it is."
+  }, {
+    "@language" : "es",
+    "@value" : "Relaciona una entidad, princiaplmente un espacio, campaña o evento comercial, con la zona en la que está."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "located in zone"
+  }, {
+    "@language" : "es",
+    "@value" : "situado en zona"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#numberOfCommercialSpaces",
@@ -507,8 +544,14 @@
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone"
+  } ],
   "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
     "@id" : "http://vocab.linkeddata.es/datosabiertos/def/common/zone#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Autonomia",
@@ -721,6 +764,15 @@
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
     "@value" : "Dirección postal"
+  } ]
+}, {
+  "@id" : "http://vocab.linkeddata.es/datosabiertos/def/urbanismos-infraestructuras/infraestructura#InfrastructureElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#isDefinedBy" : [ {
+    "@id" : "http://vocab.linkeddata.es/datosabiertos/def/urbanismos-infraestructuras/infraestructura#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#Feature"
   } ]
 }, {
   "@id" : "http://vocab.linkeddata.es/datosabiertos/kos/edint/CommercialCampaignType",

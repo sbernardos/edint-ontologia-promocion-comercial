@@ -1,9 +1,22 @@
-<h2 id="desc" class="list">promocion: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<h2 id="desc" class="list">The Commercial Promotion Ontology: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 
-<span class="markdown">This is a placeholder text for the description of your ontology. The description should include an explanation and a diagram explaining how the classes are related, examples of usage, etc.
+<span class="markdown">
+<p>Figure 1 shows the main entities of the ontology and the relationships among them. The ontology represents, among other things, <a href="#CommercialCampaign">commercial campaigns</a>, which represent a set of marketing operations and strategies that pursue common objectives such as giving visibility to certain products and services, and <a href="#CommercialEvent">commercial events</a>, which represent a planned activity to interact with their target audience —customers, partners, or employees— with the aim of promoting products or services. <a href="#CommercialCampaign">Commercial campaigns</a> may <a href="#hasCommercialCampaignType">correspond to a campaign type</a>, <a href="#locatedInZone">cover a zone</a>, and <a href="#edintzone:locatedIn">be located in a municipality</a>. In addition, <a href="#numberOfCommercialSpaces">they have a number of joined commercial spaces</a>, although it is also possible to <a href="#includesCommercialSpace">indicate the specific affiliated commercial spaces</a>. Other data include a <a href="#schema:startDate">start date</a>, an <a href="#schema:endDate">end date</a>, and a <a href="#budget">budget</a>.</p>
 
-</span>
-<img src="images/diagrama.png" style="width:70%; display:block; margin:0 auto;">
+<p><a href="#CommercialEvent">Commercial events</a> can <a href="#hasCommercialEventType">correspond to an event type</a> <a href="#locatedInZone">cover a zone</a>, and <a href="#edintzone:locatedIn">be located in a municipality</a>. Other data include a <a href="#schema:startDate">start date</a> and an <a href="#schema:endDate">end date</a>, but more complex schedules can be represented using <a href="#schema:Event">event</a>, of which <a href="#CommercialEvent">commercial events</a> are a subclass, and <a href="#schema:Schedule">schedule</a> from the <a href="http://schema.org/">schema ontology</a>.
+</p>
+<p>For both <a href="#CommercialCampaign">commercial campaigns</a> and <a href="#CommercialEvent">commercial events</a>, it is possible to establish their <a href="#geosparql:asWKT">geolocation</a> through <a href="#gsp:hasGeometry">their geometry</a>.</p>
+
+<p>NOTE: To establish/obtain the <a href="edintzone:RegulatedZone">zone</a> in which a <a href="#CommercialSpace">commercial space</a> is located, the property <a href="#locatedInZone">located in zone</a> can be used, but it is also possible to use the location-related properties of the <a href="http://vocab.linkeddata.es/datosabiertos/def/urbanismos-infraestructuras/infraestructura#InfrastructureElementructureElement">infrastructure elements</a> from the <a href="http://vocab.linkeddata.es/datosabiertos/def/urbanismos-infraestructuras/infraestructura#">Infrastructure Ontology</a>.
+</p>
+
+<p><center><img src="images/diagrama.png" style="width:100%;"/><figcaption>
+Figure 1. Conceptual model of the ontology (excluding data properties).
+</figcaption></center></p> 
+
+<p>The following shows an example in RDF using RDF Turtle notation. This example describes the <a href="#CommercialCampaign">commercial campaign</a> CAMP-2025-CH-001, of <a href="#hasCommercialCampaignType">type</a> Revilatization, and the <a href="#CommercialEvent">commercial event</a> EV-2025-CH-001, of <a href="#hasCommercialEventType">type</a> LocalEvent. Both <a href="#locatedInZone">are located in the zone of economic interest</a> ZONA-CHAMBERI-001. The <a href="#CommercialCampaign">commercial campaign</a> <a href="#includesCommercialSpace">includes the commercial space</a> COM-CH-0001, which obviously will also be located in that zone, and its <a href="#schema:startDate">start</a> and <a href="#schema:startDate">end</a> dates.
+</p>
+
 <pre><textarea style="resize:none" readonly id="code_cd71" name="code" rows="25" cols="100">
 @prefix comp: &lt;http://semweb.mmlab.be/ns/rml-compression#&gt; .
 @prefix d2rq: &lt;http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#&gt; .
@@ -61,8 +74,10 @@
 
 </textarea></pre>
 <script>
-    var editor_cd71 = CodeMirror.fromTextArea(document.getElementById("code_cd71"), {
+    var editor_d581 = CodeMirror.fromTextArea(document.getElementById("code_d581"), {
         mode: "text/turtle",
         matchBrackets: true
     });
 </script>
+
+</span>

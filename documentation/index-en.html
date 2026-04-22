@@ -13,11 +13,11 @@
 <script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
 	<dark-mode-toggle class="slider"></dark-mode-toggle>
 </div>
-<link rel="icon" type="image/png" href="resources/rdf.icon"/> <title>Ontología de Promoción Comercial</title>
+<link rel="icon" type="image/png" href="resources/rdf.icon"/> <title>The Commercial Promotion Ontology</title>
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#","name":"Ontología de Promoción Comercial", "headline":"El propósito de esta ontología es proporcionar un vocabulario común para la representación de las entidades y los datos principales relacionados con la promoción comercial, como campañas y eventos comerciales. Su alcance incluye la descripción de campañas comerciales, eventos comerciales, zonas de interés económico y comercial, así como las relaciones entre estos elementos y los espacios comerciales, entidades territoriales y direcciones postales. Quedan fuera del alcance de la ontología otros aspectos relacionados con el comercio, como pueden ser los datos del censo de locales comerciales, que son objeto de una ontología específica dentro del mismo proyecto EDINT.", "dateReleased":"Date created", "dateModified":"Date modified", "version":"v0.1.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Daniel Doña"},{"@type":"Person","name":"Edna Ruckhaus"},{"@type":"Person","name":"Lucía Sánchez"},{"@type":"Person","name":"Oscar Corcho"},{"@type":"Person","name":"Socorro Bernardos"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#","name":"The Commercial Promotion Ontology", "headline":"Document describing the ontology http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#", "dateReleased":"2026-04-15", "version":"0.1.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"Daniel Doña"},{"@type":"Person","name":"Edna Ruckhaus"},{"@type":"Person","name":"Lucía Sánchez"},{"@type":"Person","name":"Oscar Corcho"},{"@type":"Person","name":"Socorro Bernardos"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -61,54 +61,39 @@ function loadTOC(){
       $("#nstable").load("sections/ns-en.html"); 
       $("#overview").load("sections/overview-en.html"); 
       $("#description").load("sections/description-en.html"); 
-      $("#references").load("sections/references-en.html"); 
       $("#crossref").load("sections/crossref-en.html", null, loadHash); 
     });
     </script> 
-  
-<link rel="stylesheet" href="resources/codemirror.css">
-<script src="resources/codemirror.js"></script>
-<script src="resources/matchbrackets.js"></script>
-<script src="resources/turtle.js"></script>
-
-</head> 
+  </head> 
 
 <body>
 <div class="container">
 <div class="head">
 <div style="float:right">language <a href="index-en.html"><b>en</b></a> <a href="index-es.html"><b>es</b></a> </div>
-<h1>Ontología de Promoción Comercial</h1>
-<h2>Release: Date created</h2>
+<h1>The Commercial Promotion Ontology</h1>
+<h2>Release: 2026-04-15</h2>
 
 
 <dl>
-<dt>Modified on: Date modified</dt>
 <dt>This version:</dt>
 <dd><a href="http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion/0.1.0">http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion/0.1.0</a></dd>
 <dt>Latest version:</dt>
 <dd><a href="http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#">http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#</a></dd>
 <dt>Revision:</dt>
-<dd>v0.1.0</dd>
-<dt>Issued on:</dt>
-<dd>Date issued</dd>
+<dd>0.1.0</dd>
 <dt>Authors:</dt>
-<dd>Daniel Doña, <a href="https://oeg.fi.upm.es/">Ontology Engineering Group, UPM</a></dd><dd>Edna Ruckhaus</dd><dd>Lucía Sánchez</dd><dd>Oscar Corcho</dd><dd>Socorro Bernardos</dd>
+<dd>Daniel Doña</dd><dd>Edna Ruckhaus</dd><dd>Lucía Sánchez</dd><dd>Oscar Corcho</dd><dd>Socorro Bernardos</dd>
 
-<dt>Publisher:</dt>
-<dd><a href="https://www.femp.es/">FEMP</a></dd>
-<dt>Imported Ontologies:</dt>
-<dd><a href="http://vocab.linkeddata.es/datosabiertos/def/comercio/censo-locales#">censo-locales</a></dd><dd><a href="http://vocab.linkeddata.es/datosabiertos/def/common/zone#">zone</a></dd><dd><a href="http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#">territorio</a></dd><dd><a href="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/callejero#">callejero</a></dd><dd><a href="http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#">direccion-postal</a></dd><dd><a href="http://schema.org/">schema</a></dd><dd><a href="http://www.w3.org/2006/time#">time</a></dd><dd><a href="http://www.opengis.net/ont/geosparql#">geosparql</a></dd>
-
-<dt>Download serialization:</dt><dd><span><a href="ontology.json" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
+<dt>Download serialization:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
 </dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
-<dd>Ontología de Promoción Comercial. EDINT. Revision: v0.1.0.</dd>
+<dd>Daniel Doña, Edna Ruckhaus, Lucía Sánchez, Oscar Corcho, Socorro Bernardos. The Commercial Promotion Ontology. Revision: 0.1.0. Retrieved from: http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion/0.1.0</dd>
 </dl>
 
-<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+<hr/>
 </div>
 <div class="status">
 <div>
-<span>Ontology Specification</span>
+<span>Ontology Specification Draft</span>
 </div>
 </div>     <div id="abstract"></div>
 <div id="toc"></div>     <div id="introduction"></div>
@@ -116,7 +101,6 @@ function loadTOC(){
      <div id="overview"></div>
      <div id="description"></div>
      <div id="crossref"></div>
-     <div id="references"></div>
 <div id="acknowledgments">
 <h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <p>
@@ -125,31 +109,5 @@ The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Pero
 
 
 </div>
-
-<script>
-(function() {
-  function initCodeMirrorEditors() {
-    document.querySelectorAll('textarea[id^="code"]').forEach(function(ta) {
-      if (!ta.nextSibling || !ta.nextSibling.classList ||
-          !ta.nextSibling.classList.contains('CodeMirror')) {
-        CodeMirror.fromTextArea(ta, {
-          mode: "text/turtle",
-          matchBrackets: true,
-          readOnly: ta.readOnly
-        });
-      }
-    });
-  }
-  document.addEventListener('DOMContentLoaded', function() {
-    initCodeMirrorEditors();
-    new MutationObserver(function(mutations) {
-      mutations.forEach(function(m) {
-        if (m.addedNodes.length > 0) { initCodeMirrorEditors(); }
-      });
-    }).observe(document.body, { childList: true, subtree: true });
-  });
-})();
-</script>
-
 </body>
 </html>

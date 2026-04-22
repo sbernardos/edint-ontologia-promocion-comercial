@@ -170,8 +170,24 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 <http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#hasCommercialEventType> <http://www.w3.org/2000/01/rdf-schema#label> "has commercial event campaign"@en .
 <http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#hasCommercialEventType> <http://www.w3.org/2000/01/rdf-schema#label> "tiene tipo de evento comercial"@es .
 # 
+# http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#includesCommercialSpace
+<http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#includesCommercialSpace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#includesCommercialSpace> <http://www.w3.org/2000/01/rdf-schema#comment> "It relates an entitiy, especially a Campaign, to the commercial space that has joined it."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#includesCommercialSpace> <http://www.w3.org/2000/01/rdf-schema#comment> "Relaciona una entidad, principalmente una campaña, con el espacio comercial que se ha adherido a ella."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#includesCommercialSpace> <http://www.w3.org/2000/01/rdf-schema#label> "includes commercial space"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#includesCommercialSpace> <http://www.w3.org/2000/01/rdf-schema#label> "incluye espacio comercial"@es .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#locatedInZone
+<http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#locatedInZone> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#locatedInZone> <http://www.w3.org/2000/01/rdf-schema#comment> "It relates en entity, especially a commercial space, event or campaign, to the zone where it is."@en .
+<http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#locatedInZone> <http://www.w3.org/2000/01/rdf-schema#comment> "Relaciona una entidad, princiaplmente un espacio, campaña o evento comercial, con la zona en la que está."@es .
+<http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#locatedInZone> <http://www.w3.org/2000/01/rdf-schema#label> "located in zone"@en .
+<http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#locatedInZone> <http://www.w3.org/2000/01/rdf-schema#label> "situado en zona"@es .
+# 
 # http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn
 <http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> <http://www.w3.org/2000/01/rdf-schema#domain> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> .
+<http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> <http://www.w3.org/2000/01/rdf-schema#range> <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> .
 <http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/common/zone#> .
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#municipio
@@ -269,10 +285,6 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 <http://schema.org/endDate> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://schema.org> .
 <http://schema.org/endDate> <http://www.w3.org/2000/01/rdf-schema#label> "fecha de finalización"@es .
 # 
-# http://schema.org/name
-<http://schema.org/name> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
-<http://schema.org/name> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://schema.org/> .
-# 
 # http://schema.org/openingHours
 <http://schema.org/openingHours> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
 <http://schema.org/openingHours> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
@@ -369,6 +381,11 @@ _:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/19
 <http://vocab.ciudadesabiertas.es/def/transporte/trafico#Tramo> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.ciudadesabiertas.es/def/transporte/trafico> .
 <http://vocab.ciudadesabiertas.es/def/transporte/trafico#Tramo> <http://www.w3.org/2000/01/rdf-schema#label> "Section of Track"@en .
 <http://vocab.ciudadesabiertas.es/def/transporte/trafico#Tramo> <http://www.w3.org/2000/01/rdf-schema#label> "Tramo"@es .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#CommercialSpace
+<http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#CommercialSpace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#CommercialSpace> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://vocab.linkeddata.es/datosabiertos/def/urbanismos-infraestructuras/infraestructura#InfrastructureElement> .
+<http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#CommercialSpace> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/comercio/censo-locales#> .
 # 
 # http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion/CommercialCampaign
 <http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion/CommercialCampaign> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
@@ -479,6 +496,11 @@ _:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2
 <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal> <http://www.w3.org/2000/01/rdf-schema#comment> "Una dirección postal en España. Se define como una especialización de las clases vcard:Address, schema:PostalAddress y locn:Address\nAdemás de las propiedades asociadas a estas clases, y definidas en su correspondiente vocabulario, también se pueden utilizar las definidas en los vocabularios de división administrativa española y en el callejero"@es .
 <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal> .
 <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal#DireccionPostal> <http://www.w3.org/2000/01/rdf-schema#label> "Dirección postal"@es .
+# 
+# http://vocab.linkeddata.es/datosabiertos/def/urbanismos-infraestructuras/infraestructura#InfrastructureElement
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismos-infraestructuras/infraestructura#InfrastructureElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismos-infraestructuras/infraestructura#InfrastructureElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismos-infraestructuras/infraestructura#InfrastructureElement> <http://www.w3.org/2000/01/rdf-schema#isDefinedBy> <http://vocab.linkeddata.es/datosabiertos/def/urbanismos-infraestructuras/infraestructura#> .
 # 
 # http://www.geonames.org/ontology#Feature
 <http://www.geonames.org/ontology#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .

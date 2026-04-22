@@ -182,8 +182,26 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                    "tiene tipo de evento comercial"@es .
 
 
+###  http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#includesCommercialSpace
+:includesCommercialSpace rdf:type owl:ObjectProperty ;
+                         rdfs:comment "It relates an entitiy, especially a Campaign, to the commercial space that has joined it."@en ,
+                                      "Relaciona una entidad, principalmente una campaña, con el espacio comercial que se ha adherido a ella."@es ;
+                         rdfs:label "includes commercial space"@en ,
+                                    "incluye espacio comercial"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#locatedInZone
+:locatedInZone rdf:type owl:ObjectProperty ;
+               rdfs:comment "It relates en entity, especially a commercial space, event or campaign, to the zone where it is."@en ,
+                            "Relaciona una entidad, princiaplmente un espacio, campaña o evento comercial, con la zona en la que está."@es ;
+               rdfs:label "located in zone"@en ,
+                          "situado en zona"@es .
+
+
 ###  http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn
 <http://vocab.linkeddata.es/datosabiertos/def/common/zone#locatedIn> rdf:type owl:ObjectProperty ;
+                                                                     rdfs:domain <http://vocab.linkeddata.es/datosabiertos/def/common/zone#RegulatedZone> ;
+                                                                     rdfs:range <http://vocab.linkeddata.es/datosabiertos/def/sector-publico/territorio#Municipio> ;
                                                                      rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/common/zone#> .
 
 
@@ -290,11 +308,6 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                             rdfs:label "fecha de finalización"@es .
 
 
-###  http://schema.org/name
-<http://schema.org/name> rdf:type owl:DatatypeProperty ;
-                         rdfs:isDefinedBy <http://schema.org/> .
-
-
 ###  http://schema.org/openingHours
 <http://schema.org/openingHours> rdf:type owl:DatatypeProperty ;
                                  rdfs:range xsd:string ;
@@ -396,6 +409,12 @@ xsd:gYearMonth rdf:type rdfs:Datatype .
                                                                 rdfs:isDefinedBy <http://vocab.ciudadesabiertas.es/def/transporte/trafico> ;
                                                                 rdfs:label "Section of Track"@en ,
                                                                            "Tramo"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion#CommercialSpace
+:CommercialSpace rdf:type owl:Class ;
+                 rdfs:subClassOf <http://vocab.linkeddata.es/datosabiertos/def/urbanismos-infraestructuras/infraestructura#InfrastructureElement> ;
+                 rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/comercio/censo-locales#> .
 
 
 ###  http://vocab.linkeddata.es/datosabiertos/def/comercio/promocion/CommercialCampaign
@@ -531,6 +550,12 @@ Por esta razón, se utiliza geonames:R.ST como valor principal de la propiedad g
 Además de las propiedades asociadas a estas clases, y definidas en su correspondiente vocabulario, también se pueden utilizar las definidas en los vocabularios de división administrativa española y en el callejero"""@es ;
                                                                                                            rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/urbanismo-infraestructuras/direccion-postal> ;
                                                                                                            rdfs:label "Dirección postal"@es .
+
+
+###  http://vocab.linkeddata.es/datosabiertos/def/urbanismos-infraestructuras/infraestructura#InfrastructureElement
+<http://vocab.linkeddata.es/datosabiertos/def/urbanismos-infraestructuras/infraestructura#InfrastructureElement> rdf:type owl:Class ;
+                                                                                                                 rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ;
+                                                                                                                 rdfs:isDefinedBy <http://vocab.linkeddata.es/datosabiertos/def/urbanismos-infraestructuras/infraestructura#> .
 
 
 ###  http://www.geonames.org/ontology#Feature
