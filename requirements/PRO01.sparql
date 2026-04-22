@@ -11,6 +11,7 @@ WHERE {
             edintpro:locatedInZone ?zone ;
             dcterms:identifier ?campaignId .
 
-  ?zone esadm:municipio ?municipio .
+  ?zone esadm:municipio ?municipio . # También puede ser a través de edintzone:locatedIn
+  
 }
 ORDER BY ?municipio ?campaignId
